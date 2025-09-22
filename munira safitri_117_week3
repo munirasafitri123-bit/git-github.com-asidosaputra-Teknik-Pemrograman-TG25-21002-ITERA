@@ -1,0 +1,327 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "fungsi tanpa return"
+      ],
+      "metadata": {
+        "id": "V9M6ho5BBAi_"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "id": "14M-zz9Xzs8G",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "1dd24ff0-38bd-4a1e-a247-c2d498b269cb"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "HaloNira, Selamat pagi!\n"
+          ]
+        }
+      ],
+      "source": [
+        "def sapa(nama):\n",
+        "  print(f\"Halo{nama}, Selamat pagi!\")\n",
+        "  nama = \"Nira\"\n",
+        "sapa(nama)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Fungsi dengan return"
+      ],
+      "metadata": {
+        "id": "zpT18GNVBIp7"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def luas_persegi(sisi) :\n",
+        "    luas = sisi*sisi\n",
+        "    return luas\n",
+        "\n",
+        "sisi = 4\n",
+        "hasil = luas_persegi(sisi)\n",
+        "\n",
+        "print(hasil)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SLcebSUBBSP-",
+        "outputId": "0ea85be8-b176-467a-aed9-adbdcd9a8769"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "16\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "Function dengan nilai default"
+      ],
+      "metadata": {
+        "id": "v5wui5xIDdKY"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def gaya_gravitasi(m1, m2, r, G=6.7e-11):\n",
+        "  F = G*(m1*m2/r**2)\n",
+        "  return F\n",
+        "gaya_gravitasi(100, 200, 0.1, G=100)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "tOu-uFbQB7Rn",
+        "outputId": "9cb3ff7d-784d-42a5-a527-740296b57295"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "199999999.99999994"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 15
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "fungsi dengan konsep pointer (*)"
+      ],
+      "metadata": {
+        "id": "FC8JeFQEDj74"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def total(*args):\n",
+        "  return sum(args)\n",
+        "args = total(1, 2, 3, 4, 5)\n",
+        "print(args)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "V8H1azvODswv",
+        "outputId": "ae2aee77-24a8-4e95-a684-8d12b5c48a43"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "15\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "challenge"
+      ],
+      "metadata": {
+        "id": "SYp_b9s1E6ny"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def hitung_harga_akhir(harga_awal, persen_diskon):\n",
+        "    diskon = harga_awal * (persen_diskon / 100)\n",
+        "    harga_akhir = harga_awal - diskon\n",
+        "    return harga_akhir\n",
+        "\n",
+        "harga = 100000\n",
+        "diskon = 20\n",
+        "print(f\"Harga akhir: {hitung_harga_akhir(harga, diskon)}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7Ofi--N8GyoJ",
+        "outputId": "e57d0f69-c1e6-4430-f450-7888e25e24ab"
+      },
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Harga akhir: 80000.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def harga_discount(harga,min_harga=100000,discount=20):\n",
+        "    if harga > min_harga:\n",
+        "        potongan_harga = discount*harga/100\n",
+        "    else:\n",
+        "        potongan_harga = 0\n",
+        "    return harga-potongan_harga\n",
+        "harga_discount(150000)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "C_U9w7CwJ8Zc",
+        "outputId": "fca59beb-39dd-4b5e-e4b1-bb4f08750069"
+      },
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "120000.0"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 29
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def harga_diskon(harga, min_harga=100000, diskon=20):\n",
+        "    potongan = 0\n",
+        "    if harga > min_harga:\n",
+        "      potongan = (diskon*harga)/100\n",
+        "    else:\n",
+        "      potongan = 0\n",
+        "    return harga - potongan\n"
+      ],
+      "metadata": {
+        "id": "77evNWNJGZLE"
+      },
+      "execution_count": 27,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Lambda"
+      ],
+      "metadata": {
+        "id": "tGOVGNcUICb8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "luas = lambda sisi : sisi*sisi\n",
+        "print(luas(10))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4jpKfPcVFRDr",
+        "outputId": "33d2acac-a7e4-4ecf-8aa7-b41687c9cf95"
+      },
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "100\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Scope"
+      ],
+      "metadata": {
+        "id": "iw8fx1K8Jntd"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = 10\n",
+        "\n",
+        "def ubah():\n",
+        "  global x\n",
+        "  x = 30\n",
+        "\n",
+        "ubah()\n",
+        "print(x)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "eHq6kfFyDg7R",
+        "outputId": "de6bdac3-65a0-4ac8-e690-6e8cd75c24f2"
+      },
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "30\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
