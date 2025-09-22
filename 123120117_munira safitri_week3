@@ -1,0 +1,69 @@
+fungsi tanpa return
+def sapa(nama):
+  print(f"Halo{nama}, Selamat pagi!")
+  nama = "Nira"
+sapa(nama)
+
+fungsi dengan return
+def luas_persegi(sisi) :
+    luas = sisi*sisi
+    return luas
+
+sisi = 4
+hasil = luas_persegi(sisi)
+
+print(hasil)
+
+fungsi dengan nilai default
+def gaya_gravitasi(m1, m2, r, G=6.7e-11):
+  F = G*(m1*m2/r**2)
+  return F
+gaya_gravitasi(100, 200, 0.1, G=100)
+
+
+fungsi pointer
+def total(*args):
+  return sum(args)
+args = total(1, 2, 3, 4, 5)
+print(args)
+
+lambda
+luas = lambda sisi : sisi*sisi
+print(luas(10))
+
+scope
+x = 10
+
+def ubah():
+  global x
+  x = 30
+
+ubah()
+print(x)
+
+
+
+def luar():
+    x = "python"
+    def dalam():
+        print("dalam:",x)
+
+
+def penjumlahan(a, b):
+    return a + b
+
+def pengurangan(a, b):
+    return a - b
+
+def perkalian(a, b):
+    return a * b
+
+
+import matematika as mtk
+from matematika import pengurangan
+a = 5
+b = 4
+
+hasil = mtk.pengurangan(a, b)
+hasil_kali = mtk.perkalian(a, b)
+hasil_kali= perkalian(a,b)
